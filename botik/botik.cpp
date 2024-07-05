@@ -41,7 +41,7 @@ anime pot2() {
 }
 anime pot3() {
 	anime inp;
-	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11]};
+	inp.genres = { genres_global[2],  genres_global[3], genres_global[7]};
 	inp.name = "Kaguya-sama: Love is War";
 	inp.author = "Shinta Sakayama";
 	inp.year_of_release = 2019;
@@ -49,12 +49,14 @@ anime pot3() {
 }
 anime pot4() {
 	anime inp;
-	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
+	inp.genres = { genres_global[0],  genres_global[5], genres_global[4], genres_global[11] };
 	inp.name = "Attack on Titan";
-	inp.author = "Shinta Sakayama";
-	inp.year_of_release = 2019;
+	inp.author = "Isayama Hajime";
+	inp.year_of_release = 2013;
 	return inp;
 }
+
+
 anime pot5() {
 	anime inp;
 	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
