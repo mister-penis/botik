@@ -141,7 +141,7 @@ void poshuk(vector<anime> a) {
 
 	bool found = false;
 	for (const anime& i : a) {
-		if (tolower(i.name) == tolower(user_name)) {
+		if (i.name == user_name) {
 			found = true;
 			cout << i.name <<"\n" << "author: " << i.author << " year of release : " << i.year_of_release << "\n";
 			break;
