@@ -113,14 +113,6 @@ anime pot11() {
 	inp.year_of_release = 2012;
 	return inp;
 }
-/*anime pot12() {
-	anime inp;
-	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
-	inp.name = "Kaguya-sama: Love is War";
-	inp.author = "Shinta Sakayama";
-	inp.year_of_release = 2019;
-	return inp;
-}*/
 anime pot12() {
 	anime inp;
 	inp.genres = { genres_global[2],  genres_global[1], genres_global[6]};
@@ -137,54 +129,6 @@ anime pot13() {
 	inp.year_of_release = 2021;
 	return inp;
 }
-/*anime pot15() {
-	anime inp;
-	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
-	inp.name = "Kaguya-sama: Love is War";
-	inp.author = "Shinta Sakayama";
-	inp.year_of_release = 2019;
-	return inp;
-}
-anime pot16() {
-	anime inp;
-	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
-	inp.name = "Kaguya-sama: Love is War";
-	inp.author = "Shinta Sakayama";
-	inp.year_of_release = 2019;
-	return inp;
-}
-anime pot17() {
-	anime inp;
-	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
-	inp.name = "Kaguya-sama: Love is War";
-	inp.author = "Shinta Sakayama";
-	inp.year_of_release = 2019;
-	return inp;
-}
-anime pot18() {
-	anime inp;
-	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
-	inp.name = "Kaguya-sama: Love is War";
-	inp.author = "Shinta Sakayama";
-	inp.year_of_release = 2019;
-	return inp;
-}
-anime pot19() {
-	anime inp;
-	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
-	inp.name = "Kaguya-sama: Love is War";
-	inp.author = "Shinta Sakayama";
-	inp.year_of_release = 2019;
-	return inp;
-}
-anime pot20() {
-	anime inp;
-	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
-	inp.name = "Kaguya-sama: Love is War";
-	inp.author = "Shinta Sakayama";
-	inp.year_of_release = 2019;
-	return inp;
-}*/
 
 
 
@@ -197,7 +141,7 @@ void poshuk(vector<anime> a) {
 
 	bool found = false;
 	for (const anime& i : a) {
-		if (i.name == user_name) {
+		if (tolower(i.name) == tolower(user_name)) {
 			found = true;
 			cout << i.name <<"\n" << "author: " << i.author << " year of release : " << i.year_of_release << "\n";
 			break;
@@ -241,17 +185,6 @@ int main()
 	animes.push_back(pot11());
 	animes.push_back(pot12());
 	animes.push_back(pot13());
-	//animes.push_back(pot14());
-/*	animes.push_back(pot15());
-	animes.push_back(pot16());
-	animes.push_back(pot17());
-	animes.push_back(pot18());
-	animes.push_back(pot19());
-	animes.push_back(pot20());*/
-
-
-
-
 
 	cout << "I'm a dumb anime search bot\n";
 	cout << "enter the desired search method\n";
