@@ -1,14 +1,15 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
 #include <set>
+#include <algorithm>
 
 using namespace std;
 
 const int SIZE = 12;
 string genres_global[SIZE] = {"adventures", "action", "comedy", "everyday life", "romance", "drama", "fiction", "fantasy", "mysticism", "detective", "thriller", "psychology"};
-                             // 0 пригоди 1 бойовик 2 комедія 3 повсякдненість 4 романтика 5 драма 6 фантастика 7 феттезі 8 містика 9 детектив 10 трілер 11 психологія 
+                             // 0 РїСЂРёРіРѕРґРё 1 Р±РѕР№РѕРІРёРє 2 РєРѕРјРµРґС–СЏ 3 РїРѕРІСЃСЏРєРґРЅРµРЅС–СЃС‚СЊ 4 СЂРѕРјР°РЅС‚РёРєР° 5 РґСЂР°РјР° 6 С„Р°РЅС‚Р°СЃС‚РёРєР° 7 С„РµС‚С‚РµР·С– 8 РјС–СЃС‚РёРєР° 9 РґРµС‚РµРєС‚РёРІ 10 С‚СЂС–Р»РµСЂ 11 РїСЃРёС…РѕР»РѕРіС–СЏ 
 int vibor;
 
 struct anime {
@@ -27,7 +28,7 @@ anime pot1() {
 	anime inp;
 	inp.genres = { genres_global[6],  genres_global[5], genres_global[1] };
 	inp.name = "Naruto";
-	inp.author = "Masasi Kishimoto";
+	inp.author = "Masasi_Kishimoto";
 	inp.year_of_release = 2002;
 	return inp;
 }
@@ -35,14 +36,14 @@ anime pot2() {
 	anime inp;
 	inp.genres = { genres_global[0],  genres_global[2], genres_global[7] };
 	inp.name = "KonoSuba";
-	inp.author = "Natsume Akatsuki";
+	inp.author = "Natsume_Akatsuki";
 	inp.year_of_release = 2017;
 	return inp;
 }
 anime pot3() {
 	anime inp;
 	inp.genres = { genres_global[2],  genres_global[3], genres_global[7]};
-	inp.name = "Kaguya-sama: Love is War";
+	inp.name = "Kaguya_sama_Love_is_War";
 	inp.author = "Shinta Sakayama";
 	inp.year_of_release = 2019;
 	return inp;
@@ -50,94 +51,93 @@ anime pot3() {
 anime pot4() {
 	anime inp;
 	inp.genres = { genres_global[0],  genres_global[5], genres_global[4], genres_global[11] };
-	inp.name = "Attack on Titan";
+	inp.name = "Attack_on_Titan";
 	inp.author = "Isayama Hajime";
 	inp.year_of_release = 2013;
 	return inp;
 }
-
-
 anime pot5() {
 	anime inp;
-	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
-	inp.name = "Kaguya-sama: Love is War";
-	inp.author = "Shinta Sakayama";
-	inp.year_of_release = 2019;
+	inp.genres = { genres_global[11],  genres_global[10], genres_global[9], genres_global[5] };
+	inp.name = "Death_note";
+	inp.author = "Tsugumi Oba";
+	inp.year_of_release = 2006;
 	return inp;
 }
 anime pot6() {
 	anime inp;
-	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
-	inp.name = "Kaguya-sama: Love is War";
-	inp.author = "Shinta Sakayama";
+	inp.genres = { genres_global[1],  genres_global[7], genres_global[5]};
+	inp.name = "Jujutsu_Kaisen";
+	inp.author = "Gage Akutami";
 	inp.year_of_release = 2019;
 	return inp;
 }
 anime pot7() {
 	anime inp;
-	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
-	inp.name = "Kaguya-sama: Love is War";
-	inp.author = "Shinta Sakayama";
-	inp.year_of_release = 2019;
+	inp.genres = { genres_global[2],  genres_global[3]};
+	inp.name = "Grand_Blue_Dreaming";
+	inp.author = "Kenji Inoue";
+	inp.year_of_release = 2018;
 	return inp;
 }
 anime pot8() {
 	anime inp;
-	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
-	inp.name = "Kaguya-sama: Love is War";
-	inp.author = "Shinta Sakayama";
-	inp.year_of_release = 2019;
+	inp.genres = { genres_global[2],  genres_global[3], genres_global[6], genres_global[9], genres_global[8] };
+	inp.name = "Suzumiya_Haruhi";
+	inp.author = "Tanigawa Nagaru";
+	inp.year_of_release = 2006;
 	return inp;
 }
 anime pot9() {
 	anime inp;
-	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
-	inp.name = "Kaguya-sama: Love is War";
-	inp.author = "Shinta Sakayama";
-	inp.year_of_release = 2019;
+	inp.genres = { genres_global[0], genres_global[1], genres_global[2], genres_global[7]};
+	inp.name = "One_Piece";
+	inp.author = "Eiichiro Oda";
+	inp.year_of_release = 1999;
 	return inp;
 }
 anime pot10() {
 	anime inp;
-	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
-	inp.name = "Kaguya-sama: Love is War";
-	inp.author = "Shinta Sakayama";
-	inp.year_of_release = 2019;
+	inp.genres = {genres_global[3], genres_global[4], genres_global[2]};
+	inp.name = "Love_Chunibyo_&_Other_Delusions";
+	inp.author = "Thoraco";
+	inp.year_of_release = 2012;
 	return inp;
 }
+
 anime pot11() {
 	anime inp;
-	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
-	inp.name = "Kaguya-sama: Love is War";
-	inp.author = "Shinta Sakayama";
-	inp.year_of_release = 2019;
+	inp.genres = { genres_global[8],  genres_global[10], genres_global[11]};
+	inp.name = "Another";
+	inp.author = "Yukito_Ayatsuza";
+	inp.year_of_release = 2012;
 	return inp;
 }
-anime pot12() {
+/*anime pot12() {
 	anime inp;
 	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
 	inp.name = "Kaguya-sama: Love is War";
 	inp.author = "Shinta Sakayama";
 	inp.year_of_release = 2019;
+	return inp;
+}*/
+anime pot12() {
+	anime inp;
+	inp.genres = { genres_global[2],  genres_global[1], genres_global[6]};
+	inp.name = "My_Hero_Academia";
+	inp.author = "Kohei_Horikosa";
+	inp.year_of_release = 2016;
 	return inp;
 }
 anime pot13() {
 	anime inp;
 	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
-	inp.name = "Kaguya-sama: Love is War";
-	inp.author = "Shinta Sakayama";
-	inp.year_of_release = 2019;
+	inp.name = "Sama_Taimu_Renda";
+	inp.author = "Yasuki Tanaka";
+	inp.year_of_release = 2021;
 	return inp;
 }
-anime pot14() {
-	anime inp;
-	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
-	inp.name = "Kaguya-sama: Love is War";
-	inp.author = "Shinta Sakayama";
-	inp.year_of_release = 2019;
-	return inp;
-}
-anime pot15() {
+/*anime pot15() {
 	anime inp;
 	inp.genres = { genres_global[2],  genres_global[3], genres_global[4], genres_global[11] };
 	inp.name = "Kaguya-sama: Love is War";
@@ -184,19 +184,20 @@ anime pot20() {
 	inp.author = "Shinta Sakayama";
 	inp.year_of_release = 2019;
 	return inp;
-}
+}*/
 
 
 
 
 void poshuk(vector<anime> a) {
-	string user_ganer;
+	string user_name;
+	cout << "replace ' ' with '_'";
 	cout << "enter name: ";
-	cin >> user_ganer;
+	cin >> user_name;
 
 	bool found = false;
 	for (const anime& i : a) {
-		if (i.name == user_ganer) {
+		if (i.name == user_name) {
 			found = true;
 			cout << i.name <<"\n" << "author: " << i.author << " year of release : " << i.year_of_release << "\n";
 			break;
@@ -240,23 +241,23 @@ int main()
 	animes.push_back(pot11());
 	animes.push_back(pot12());
 	animes.push_back(pot13());
-	animes.push_back(pot14());
-	animes.push_back(pot15());
+	//animes.push_back(pot14());
+/*	animes.push_back(pot15());
 	animes.push_back(pot16());
 	animes.push_back(pot17());
 	animes.push_back(pot18());
 	animes.push_back(pot19());
-	animes.push_back(pot20());
+	animes.push_back(pot20());*/
 
 
 
 
 
-
-	cout << "enter what criteria you want me to be able to recommend anime\n";
+	cout << "I'm a dumb anime search bot\n";
+	cout << "enter the desired search method\n";
 	cout << "1 genres\n";
 	cout << "2 name\n";
-	cout << "1 year of release\n";
+	cout << "3 year of release\n";
 	cout << ": ";
 	cin >> vibor;
 	if (vibor == 1) {
